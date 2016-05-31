@@ -3,7 +3,6 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 const NpmInstallPlugin = require('npm-install-webpack-plugin');
 const TARGET = process.env.npm_lifecycle_event;
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanPlugin = require('clean-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -87,9 +86,7 @@ plugins: [
   new webpack.HotModuleReplacementPlugin(),
   new NpmInstallPlugin({
     save: true //--save
-  }),
-  new FaviconsWebpackPlugin('my-logo.png')
-]
+  })]
 });
 }
 
